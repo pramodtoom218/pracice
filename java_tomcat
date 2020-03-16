@@ -1,0 +1,23 @@
+cd /opt
+sudo wget https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz
+tar -zxvf OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz 
+sudo tar -zxvf OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz 
+sudo mv jdk8u242-b08/ java8
+export JAVA_HOME=/opt/java8
+export PATH=$PATH:/opt/java8/bin
+which java
+echo $JAVA_HOME
+vi /etc/profile
+sudo vi /etc/profile
+cd /opt
+sudo wget http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.51/bin/apache-tomcat-8.5.51.tar.gz
+sudo tar -zxvf apache-tomcat-8.5.51.tar.gz 
+sudo mv apache-tomcat-8.5.51 tomcat8
+cd tomcat8/
+cd bin/
+chown -R ec2-user:ec2-user /opt
+sudo chown -R ec2-user:ec2-user /opt
+cd bin/
+sh startup.sh 
+cd webapps/
+   
